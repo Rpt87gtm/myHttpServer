@@ -26,6 +26,7 @@ public class HttpConnectionWorkerThread extends Thread{
             inputStream =  socket.getInputStream();
             outputStream = socket.getOutputStream();
 
+
             String html = "<html><head><title>Sipmle HTTP Server</title></head><body>its work</body></html>";
 
             final String CRLF = "\n\r"; // 13. 10

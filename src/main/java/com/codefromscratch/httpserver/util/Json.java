@@ -3,7 +3,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.*;
 
 import java.io.IOException;
-import java.io.Serializable;
 
 public class Json {
     private static ObjectMapper myObjectMapper = defaultObjectMapper() ;
@@ -25,12 +24,12 @@ public class Json {
         return myObjectMapper.valueToTree(obj);
     }
     public static  String stringify(JsonNode node) throws JsonProcessingException {
-        return genetateJson(node, false);
+        return generateJson(node, false);
     }
     public static  String stringifyPretty(JsonNode node) throws JsonProcessingException {
-        return genetateJson(node, true);
+        return generateJson(node, true);
     }
-    private static String genetateJson(Object o, boolean pretty) throws JsonProcessingException {
+    private static String generateJson(Object o, boolean pretty) throws JsonProcessingException {
         ObjectWriter objectWriter = myObjectMapper.writer();
         if (pretty){
             objectWriter = objectWriter.with(SerializationFeature.INDENT_OUTPUT);
